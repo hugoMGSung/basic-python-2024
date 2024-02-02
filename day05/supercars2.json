@@ -1,0 +1,12 @@
+{
+	"audi": {
+		"price": 300000000,
+		"year": "2024",
+		"auto": true
+	},
+	"porsche": {
+		"price": 1000000000,
+		"year": "2017",
+		"auto": true
+	}
+}
