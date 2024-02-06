@@ -7,8 +7,8 @@ from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 
-class qtwin_exam(QWidget):    
-    def __init__(self) -> None:
+class qtwin_exam(QWidget): ## 상속   
+    def __init__(self) -> None: 
         super().__init__()
         uic.loadUi('./day06/TestApp.ui', self) # QtDesigner에서 만든 ui를 로드
         # 버튼에 대한 시그널처리
@@ -24,6 +24,7 @@ class qtwin_exam(QWidget):
         print('종료버튼 클릭')
         self.lblStatus.setText('상태 : 동작중지')    
 
+    # 부모의 closeEvent는 그냥 닫히기 때문에 여기서 재정의해서 구현함(Override)
     def closeEvent(self, QCloseEvent) -> None: # X버튼 종료확인
         re = QMessageBox.question(self, '종료확인', '종료할래?', QMessageBox.Yes|QMessageBox.No)
         if re == QMessageBox.Yes: #닫기
